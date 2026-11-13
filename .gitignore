@@ -1,0 +1,64 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Environments
+.conda/
+venv/
+.venv/
+env/
+.env
+
+# Node
+node_modules/
+package-lock.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Data / Generated
+scriptLattes/resultados/
+scriptLattes/json/
+scriptLattes/venv/
+scriptLattes/lista_alunos.txt
+processamento_logs.txt
+mapeamento_lattes.json.bak
+
+# Dados pessoais (LGPD) — fora do controle de versão.
+# Em produção, entram por volume (docker-compose.yml).
+# Exceções: academicData.ts e resumos_cache.json acompanham o código porque
+# o site depende deles; indice_fontes.json é derivado (nome -> fonte).
+dados/
+escavador_perfis/
+demographicData.ts
+mapeamento_lattes.json
+scriptLattes/CERTIFICADO_*.pdf
+
+# Ferramentas locais
+.playwright-cli/
+
+# Logs
+*.log
+
+# scriptLattes - generated & local files only
+scriptLattes/.git/
+scriptLattes/venv/
+scriptLattes/cache/
+scriptLattes/resultados/
+scriptLattes/json/
+scriptLattes/chrome-win64/
+scriptLattes/chrome-win64.zip
+scriptLattes/chromedriver
+scriptLattes/lista_alunos.txt

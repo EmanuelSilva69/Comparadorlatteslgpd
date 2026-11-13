@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrar — Comparador Lattes</title>
+    <style>
+        :root {
+            --bg-main: #0b0f17;
+            --bg-card: #121b2d;
+            --border: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --primary: #10b981;
+            --danger: #f87171;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', system-ui, sans-serif; }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+        }
+
+        .login-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2.2rem;
+            width: 100%;
+            max-width: 380px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+        }
+
+        h1 {
+            font-size: 1.35rem;
+            font-weight: 800;
+            margin-bottom: 0.4rem;
+            background: linear-gradient(90deg, #10b981, #34d399);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p.subtitulo {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-bottom: 1.6rem;
+        }
+
+        label {
+            display: block;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.4rem;
+        }
+
+        input {
+            width: 100%;
+            background: var(--bg-main);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            padding: 0.7rem 0.9rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            outline: none;
+            margin-bottom: 1rem;
+        }
+
+        input:focus { border-color: var(--primary); }
+
+        button {
+            width: 100%;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: #fff;
+            border: none;
+            padding: 0.75rem 1rem;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        button:hover { transform: translateY(-1px); }
+        button:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+        #erroLogin {
+            color: var(--danger);
+            font-size: 0.8rem;
+            min-height: 1.1rem;
+            margin-top: 0.9rem;
+        }
+
+        .rodape {
+            margin-top: 1.4rem;
+            color: #475569;
+            font-size: 0.72rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <main class="login-card">
+        <h1>Comparador Lattes</h1>
+        <p class="subtitulo">Acesso restrito. Informe suas credenciais.</p>
+
+        <form id="formLogin" autocomplete="on">
+            <label for="usuario">Usuário</label>
+            <input id="usuario" name="usuario" type="text" autocomplete="username" required autofocus>
+
+            <label for="senha">Senha</label>
+            <input id="senha" name="senha" type="password" autocomplete="current-password" required>
+
+            <button id="btnEntrar" type="submit">Entrar</button>
+        </form>
+
+        <div id="erroLogin" role="alert"></div>
+        <div class="rodape">Dados pessoais — acesso monitorado</div>
+    </main>
+
+    <script src="/assets/login.js"></script>
+</body>
+</html>

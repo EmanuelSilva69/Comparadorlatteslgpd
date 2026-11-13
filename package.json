@@ -1,0 +1,12 @@
+{
+  "name": "scanner-pos-mestrado-pro",
+  "version": "2.1.0",
+  "description": "Comparador de trajetórias de egressos (Lattes + Escavador), sem LLM, com login",
+  "main": "api.py",
+  "scripts": {
+    "dev": "python api.py"
+  },
+  "keywords": [],
+  "author": "Emanuel Silva",
+  "license": "ISC"
+}

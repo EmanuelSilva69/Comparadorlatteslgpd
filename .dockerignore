@@ -1,0 +1,29 @@
+.git
+.gitignore
+**/__pycache__
+**/*.pyc
+.conda/
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+
+# Dados pessoais e resultados de coleta
+dados/
+escavador_perfis/
+scriptLattes/
+mapeamento_lattes.json
+mapeamento_lattes.json.bak
+demographicData.ts
+*.pdf
+*.log
+
+# Ferramentas locais / testes manuais
+tools/
+teste.py
+autoria_teste.py
+verificar_arquivos.py
+scraper.py
+processamento_logs.txt
+.playwright-cli/

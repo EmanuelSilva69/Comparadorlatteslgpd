@@ -21,13 +21,23 @@ cd ComparadorLattesEnfermagem
 ## 2. Configurar o login
 
 ```bash
+chmod +x setup.sh
+./setup.sh
+```
+
+O script cria o `.env`, gera o segredo de sessão e imprime as senhas de `admin`
+e `mestrado` (login mestre da equipe). Guarde-as: o `.env` **não** é versionado.
+Todos os logins têm o mesmo nível de acesso.
+
+No Windows, use `.\setup.ps1`.
+
+Se preferir fazer manualmente:
+
+```bash
 cp .env.example .env
 python tools/gerar_senha.py --usuario admin --escrever
 python tools/gerar_senha.py --usuario mestrado --adicionar
 ```
-
-O segundo comando cria o **login mestre** compartilhado com a equipe. Todos os
-logins têm o mesmo nível de acesso.
 
 O `.env` contém segredos e **não deve ser versionado**. Transfira-o para o
 servidor por canal seguro (ou gere novamente lá).

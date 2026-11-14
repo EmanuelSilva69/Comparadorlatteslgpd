@@ -58,23 +58,28 @@ O inventário completo de dados e as pendências de governança estão em
 
 ## Configuração
 
-1. Copie o modelo de ambiente:
+1. Rode o setup (cria `.env`, segredo de sessão e os logins):
+
+   ```bash
+   chmod +x setup.sh
+   ./setup.sh
+   ```
+
+   No Windows: `.\setup.ps1`.
+
+   O script imprime as senhas de `admin` e `mestrado` (login mestre da equipe).
+   Guarde-as; o `.env` não é versionado. Todos os logins têm o mesmo nível de
+   acesso.
+
+   Alternativa manual:
 
    ```bash
    cp .env.example .env
-   ```
-
-2. Crie o login do responsável e o login mestre da equipe:
-
-   ```bash
    python tools/gerar_senha.py --usuario admin --escrever
    python tools/gerar_senha.py --usuario mestrado --adicionar
    ```
 
-   O primeiro comando grava `APP_SENHA_HASH` e `APP_SECRET_KEY`; o segundo
-   adiciona `mestrado` em `APP_USUARIOS`. Todos os logins têm o mesmo nível de
-   acesso. Sem `.env`, a aplicação gera uma senha temporária e a imprime no
-   console.
+   Sem `.env`, a aplicação gera uma senha temporária e a imprime no console.
 
 3. (Opcional) Coloque os dados de coleta em `./dados/`:
 
@@ -178,6 +183,7 @@ Todas exigem sessão, exceto `/login` e `/api/login`.
 │   ├── login.html          # Tela de login
 │   └── assets/             # app.js, login.js
 ├── tools/gerar_senha.py    # Gera hash de senha e atualiza .env
+├── setup.sh / setup.ps1    # Configuração inicial (cria .env e logins)
 ├── academicData.ts         # Lista de alunos (necessário ao site)
 ├── resumos_cache.json      # Resumos (necessário ao site)
 ├── indice_fontes.json      # Índice nome → fonte (derivado)
